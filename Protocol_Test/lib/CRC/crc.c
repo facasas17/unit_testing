@@ -33,26 +33,6 @@ static uint8_t crc8_small_table[16] = {
 /*******************************************************************************
  * Code - public
  ******************************************************************************/
-// uint8_t calc_crc(uint8_t *data, size_t len) 
-// {
-//     uint8_t crc = 0;
-//     size_t i;
-//     uint8_t j;
-
-//     for (i = 0; i < len; i++) 
-//     {
-//         crc ^= data[i];
-//         for (j = 0; j < 8; j++) 
-//         {
-//             if (crc & 0x80)
-//                 crc = (crc << 1) ^ CRC_POLY;
-//             else
-//                 crc <<= 1;
-//         }
-//     }
-//     return crc;
-// }
-
 uint8_t crc_calc(uint8_t val, void *buf, uint8_t len)
 {
 	int i;

@@ -31,9 +31,6 @@ static uint8_t check_CRC(uint8_t *buff);
  ******************************************************************************/
 static int add_CRC(uint8_t *buff)
 {
-    uint16_t size_buff;
-    uint8_t crc;
-
     buff[sizeof(protocol_frame_t)] = crc_calc(0, (uint8_t *)buff, sizeof(protocol_frame_t));
 }
 
@@ -96,7 +93,4 @@ crc_status_t protocol_readFrame(uint8_t *data_buff, protocol_frame_t *frame)
     {
         return CRC_ERROR;
     }
-
-    // Devuelve la longitud del marco de datos
-    return sizeof(protocol_frame_t);
 }
